@@ -58,16 +58,19 @@ function App() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-xs tracking-[0.2em] text-gray-400 mb-3">A little about Kaegan</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight font-heading">
-            A PM who shows up to <span className="text-violet-600">city hall</span>
+            The kind of person who shows up to <span className="text-violet-600">city hall</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
-            Hi Spare! 👋 I'm Kaegan.
+            Hi Swiftly! 👋 I'm Kaegan.
           </p>
           <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
             At 10 years old, I put on my best (only) suit and asked my mom to drive me to city hall so I could speak at a community hearing about the proposed Evergreen Line. It took two more decades, but the line was eventually built.
           </p>
           <p className="mt-3 text-base sm:text-lg text-gray-500 max-w-xl mx-auto italic">
             I choose to believe these events are related.
+          </p>
+          <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
+            These days I'm a daily transit rider, and reliability is what decides whether I take the bus or drive. When TransLink floated a plan to speed up the #19 that runs past my house by spacing out the stops, I read every detail and wrote in with my thoughts.
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ const features = [
     icon: Map,
     tag: 'Coverage Analysis',
     headline: 'A score for every neighbourhood',
-    body: 'MindTheGap analyzes 3,590 dissemination areas across Metro Vancouver. It combined population density with transit accessibility to produce a gap score between 0 and 1 for each zone. The closer to 1, the worse the coverage relative to the population density.',
+    body: 'MindTheGap analyzes 3,590 dissemination areas across Metro Vancouver. It combines population density with transit accessibility to produce a gap score between 0 and 1 for each zone. The closer to 1, the worse the coverage relative to the population density.',
     screenshot: neighborhoodScoredImg,
     alt: 'Heatmap showing transit coverage gaps across Metro Vancouver',
   },
@@ -36,8 +36,8 @@ const features = [
   {
     icon: BarChart3,
     tag: 'Hotspot Detection',
-    headline: 'Find the biggest opportunity areas with hotspots',
-    body: 'The hotspot layer surfaces areas where multiple coverage gaps converge, helping planners prioritize the neighbourhoods where new service would have the greatest impact.',
+    headline: 'See where the gaps cluster',
+    body: 'The hotspot layer shows where multiple coverage gaps sit close together, so you can see which neighbourhoods would benefit most from new service.',
     screenshot: heatmapImg,
     alt: 'Hotspot heatmap highlighting clusters of transit coverage gaps',
   },
@@ -104,9 +104,6 @@ export default function ProductFeatures() {
         {/* Section header */}
         <div className="text-center mb-16 sm:mb-20">
           <p className="text-xs tracking-[0.2em] text-gray-500 mb-3">How it works</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight font-heading">
-            Built to surface what's <span className="text-violet-600">hidden in plain sight</span>
-          </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
             Transit maps show where service exists. MindTheGap shows where it doesn't, and how many people are affected.
           </p>
