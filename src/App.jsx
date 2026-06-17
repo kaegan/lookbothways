@@ -10,54 +10,42 @@ import Footer from './components/Layout/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-surface text-text-primary font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
       <Header />
 
       {/* ── Hero ── */}
-      <section className="relative px-6 pt-28 sm:pt-36 pb-8 sm:pb-10">
-        <div className="max-w-6xl mx-auto grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end">
-          <div>
-            <p className="text-xs font-medium tracking-wide text-text-muted mb-4">
-              Vancouver intersection safety analysis
-            </p>
-            <h1 className="text-text-primary text-4xl sm:text-5xl lg:text-6xl font-bold max-w-4xl leading-[1.08] mb-5 font-heading">
-              Vancouver's most dangerous intersections, scored from real crash data
-            </h1>
-            <p className="text-base sm:text-lg text-text-secondary max-w-2xl leading-relaxed">
-              MindTheGap ranks signalized intersections using ICBC crash records, then shows the corridors where risk clusters instead of stopping at a citywide heat map.
-            </p>
-          </div>
+      <section className="relative flex flex-col items-center justify-center px-6 pt-32 sm:pt-40 pb-8 sm:pb-12 text-center overflow-hidden">
+        <h1 className="text-gray-900 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tighter max-w-4xl leading-[1.1] mb-6 font-heading">
+          67,000 residents live in Metro Vancouver's transit blind spots
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-500 max-w-2xl leading-relaxed mb-10">
+          MindTheGap finds coverage gaps – areas where people live but buses and trains don't reach.
+        </p>
 
-          <div className="cs-panel p-4 sm:p-5">
-            <p className="text-xs font-semibold text-text-muted uppercase tracking-wide mb-4">
-              Dataset summary
-            </p>
-            <div className="grid grid-cols-1 gap-3">
-              {[
-                { value: '966', label: 'signalized intersections', icon: MapPin },
-                { value: '34K', label: 'injury crashes reviewed', icon: Users },
-                { value: '383', label: 'high-risk signals flagged', icon: AlertTriangle },
-              ].map((s) => (
-                <div key={s.label} className="flex items-center gap-3 border-t border-border pt-3 first:border-t-0 first:pt-0">
-                  <s.icon className="w-[18px] h-[18px] text-brand opacity-75" />
-                  <span className="text-lg font-semibold text-text-primary tabular-nums">{s.value}</span>
-                  <span className="text-sm text-text-secondary">{s.label}</span>
-                </div>
-              ))}
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8">
+          {[
+            { value: '3,590', label: 'areas analyzed', iconColor: 'text-violet-400', icon: MapPin },
+            { value: '67K', label: 'underserved', iconColor: 'text-amber-400', icon: Users },
+            { value: '72', label: 'critical gaps', iconColor: 'text-red-400', icon: AlertTriangle },
+          ].map((s) => (
+            <div key={s.label} className="cs-panel px-5 py-2.5 sm:px-6 sm:py-3 flex items-center gap-2">
+              <s.icon className={`w-4 h-4 sm:w-[18px] sm:h-[18px] ${s.iconColor} opacity-70`} />
+              <span className="text-base sm:text-lg font-bold text-gray-900">{s.value}</span>
+              <span className="text-xs sm:text-sm text-gray-500">{s.label}</span>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* ── Map ── */}
       <div id="map">
-        <div className="max-w-6xl mx-auto mb-4 px-6">
-          <p className="text-xs font-medium tracking-wide text-text-muted mb-2">Interactive map</p>
-          <p className="text-sm text-text-secondary max-w-2xl">
-            Ranked badges show the top 25 intersections. Turn on all intersections to compare every signalized location by injury-weighted crash history.
+        <div className="text-center mb-6 px-6">
+          <p className="text-xs tracking-[0.2em] text-gray-500 mb-2">Transit Coverage Analysis</p>
+          <p className="text-sm text-gray-500 max-w-lg mx-auto">
+            Every colored zone is a dissemination area. Transit access is measured within a 600m walking radius. The redder the zone, the more people are underserved.
           </p>
         </div>
-        <div className="mx-0 sm:mx-6 border-y sm:border border-border max-w-7xl lg:mx-auto overflow-hidden">
+        <div className="mx-4 sm:mx-8 rounded-xl border border-gray-200 max-w-7xl lg:mx-auto overflow-hidden">
           <MapSection />
         </div>
       </div>
@@ -65,14 +53,21 @@ function App() {
       <ProductFeatures />
 
       {/* ── Transition: product → about ── */}
-      <div id="about" className="relative bg-surface-warm py-16 sm:py-20">
+      <div className="h-px bg-gradient-to-r from-transparent via-violet-300/40 to-transparent" />
+      <div id="origin" className="relative bg-gray-50 py-16 sm:py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xs font-medium tracking-wide text-text-muted mb-3">About the builder</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary font-heading">
-            A PM who still shows up to <span className="text-brand">city hall</span>
+          <p className="text-xs tracking-[0.2em] text-gray-400 mb-3">A little about Kaegan</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight font-heading">
+            A PM who shows up to <span className="text-violet-600">city hall</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-text-secondary max-w-xl mx-auto">
-            MindTheGap is a side project by a product manager who's spent a decade shipping software, and a lifetime caring about how cities move.
+          <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
+            Hi Spare! 👋 I'm Kaegan.
+          </p>
+          <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
+            At 10 years old, I put on my best (only) suit and asked my mom to drive me to city hall so I could speak at a community hearing about the proposed Evergreen Line. It took two more decades, but the line was eventually built.
+          </p>
+          <p className="mt-3 text-base sm:text-lg text-gray-500 max-w-xl mx-auto italic">
+            I choose to believe these events are related.
           </p>
         </div>
       </div>

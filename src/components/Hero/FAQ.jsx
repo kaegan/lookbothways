@@ -1,26 +1,35 @@
 import { useState, useEffect, useRef } from 'react'
+import posthog from 'posthog-js'
 import { IconPlusFillDuo18 as Plus } from 'nucleo-ui-fill-duo-18'
 
 const faqs = [
   {
-    q: 'What does this map actually show?',
-    a: 'By default the map shows the 25 most dangerous signalized intersections in Vancouver, ranked by five years of crash data — click any numbered badge to see the full breakdown. Enable "All intersections" in the layer panel to reveal all 966 signals as a heat map: bigger, redder dots are riskier.',
-  },
-  {
     q: 'Where does the data come from?',
-    a: "Two real open datasets: the City of Vancouver's traffic-signals dataset (the 966 signal locations) and ICBC's reported-crashes data for Vancouver, 2016–2020 (~27,000 geolocated records). No numbers are invented — every crash count is straight from ICBC.",
+    a: "Transit data comes from TransLink's GTFS feed (stop locations and trip frequencies). Population data comes from Statistics Canada's 2021 Census at the dissemination area level.",
   },
   {
-    q: 'How is the risk score calculated?',
-    a: 'Each crash is snapped to its nearest signal within 50 meters. For every intersection we tally total crashes and weight injury (casualty) crashes 3× property-damage ones, then rank all 966 intersections into a 0–1 percentile. So the score is relative: a 0.9 means riskier than 90% of Vancouver signals.',
+    q: 'How is the gap score calculated?',
+    a: "For each area, I count the total daily transit trips within a 600-meter walking distance of its centre and divide by the resident population to get trips per capita. That per-capita figure is percentile-ranked against all areas above a density floor (400 people/km\u00B2), and the gap score is the squared inverse of that percentile. Fewer trips per resident = higher gap. Areas below the density floor are shown in gray and left ungraded.",
   },
   {
-    q: 'How was this prototype built?',
-    a: "I built the first version with Figma, Claude Code, and a lightweight React stack, then shaped it around real data and product judgment. The point is speed with taste: quickly prototype an idea, test whether it makes sense, and bring it closer to a production system once the workflow proves useful.",
+    q: 'Is the data accurate?',
+    a: "It's directional, not definitive. The GTFS feed captures scheduled service, not real-time reliability, and the census data is from 2021 so new developments won't show up. Some edges are rough (e.g. a zone near a SkyTrain station might still score high if bus feeder routes are sparse). This is a starting point for conversation, not a planning tool.",
   },
   {
-    q: "What's the point of building a prototype this way?",
-    a: (<>The role of the PM is changing. What you used to have to <em>tell</em> people, you can now <em>show</em> them. Mastery of AI tools is crucial. I'm fond of <a href="https://x.com/wadefoster/status/2038979630590509553" target="_blank" rel="noopener noreferrer" className="text-brand underline hover:text-brand-hover transition-colors">this AI fluency rubric from Zapier</a> which breaks down AI fluency by traditional software company roles into four levels: Unacceptable, Capable, Adoptive, and Transformative. Currently I'd say I'm working on being in the "adoptive" category, and working my way up.</>),
+    q: 'How did you build this?',
+    a: "Mind the Gap is a React 19 single-page app built with Vite, Tailwind CSS, and Leaflet for the interactive map. Geospatial calculations use Turf.js, and transit boundary data is compressed with TopoJSON. I used Figma (mostly for the logo) and Claude Code. All vibe coded with natural language. 21 PRs and 81 commits over about a day and a half.",
+  },
+  {
+    q: 'What parts did you do vs Claude?',
+    a: "I did all the product thinking: came up with the concept, chose the data sources, defined how the gap score should work, made the design decisions, and wrote most of the copy (I let Claude do some of the more marketing-y stuff to describe the app). Claude Code handled the implementation, with me creating and reviewing each PR. A bit like being a PM on a one person team.",
+  },
+  {
+    q: 'Why build something like this?',
+    a: (<>I wanted to hint at how the PM role is changing and how I'm changing with it. What PMs used to <em>tell</em>, through lengthy PRDs, hacky wireframes, and lots and lots of meetings, they can now often <em>show</em>, using prototypes, examples, and sometimes by actually shipping. And also, I wanted to show my enthusiasm for this role in particular. I hope I got your attention! 👋</>),
+  },
+  {
+    q: 'How does this connect to the role at Spare?',
+    a: "I wanted to take a problem Spare customers have and make a mini-app that'd get them maybe 5% of the way towards solving it. Though there's some overlap with the Enterprise and AI-focus, video is quite different from what Spare is up to. I want to show that even in a day or two I can start to think a little bit like a PM at Spare. If I were to join Spare, I'd use these skills to build interactive prototypes, brainstorm new ideas with designers, and build internal tools to speed up my own and others' workflows. I've also been building AI agents into my daily workflow, like an automated pipeline that monitors, scores, and surfaces job postings for fit.",
   },
 ]
 
@@ -36,15 +45,15 @@ function FAQItem({ q, a }) {
   }, [open])
 
   return (
-    <div className="border-b border-border">
+    <div className="border-b border-gray-200">
       <button
         className="w-full flex items-center justify-between py-5 text-left group"
-        onClick={() => setOpen(!open)}
+        onClick={() => { if (!open) posthog.capture('faq_opened', { question: q }); setOpen(!open) }}
       >
-        <span className="text-base sm:text-lg font-medium text-text-primary group-hover:text-brand transition-colors pr-4">
+        <span className="text-base sm:text-lg font-medium text-gray-900 group-hover:text-violet-600 transition-colors pr-4">
           {q}
         </span>
-        <span className={`text-text-secondary shrink-0 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>
+        <span className={`text-gray-500 shrink-0 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>
           <Plus className="w-5 h-5" />
         </span>
       </button>
@@ -53,7 +62,7 @@ function FAQItem({ q, a }) {
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: open ? `${height}px` : '0px', opacity: open ? 1 : 0 }}
       >
-        <div className="pb-5 text-text-secondary leading-relaxed text-sm sm:text-base max-w-2xl">
+        <div className="pb-5 text-gray-500 leading-relaxed text-sm sm:text-base max-w-2xl">
           {a}
         </div>
       </div>
@@ -65,11 +74,10 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative px-6 sm:px-12 py-20 sm:py-28 bg-surface-warm"
+      className="relative px-6 sm:px-12 py-16 sm:py-24 bg-gray-50"
     >
       <div className="max-w-3xl mx-auto">
-        <div className="w-10 h-px bg-brand mb-6" />
-        <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-8 font-heading">
+        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-8 tracking-tight font-heading">
           FAQ
         </h2>
         <div>
