@@ -16,20 +16,8 @@ const faqs = [
     a: "It's directional, not definitive. The GTFS feed captures scheduled service, not real-time reliability, and the census data is from 2021 so new developments won't show up. Some edges are rough (e.g. a zone near a SkyTrain station might still score high if bus feeder routes are sparse). This is a starting point for conversation, not a planning tool.",
   },
   {
-    q: 'How did you build this?',
-    a: "Mind the Gap is a React 19 single-page app built with Vite, Tailwind CSS, and Leaflet for the interactive map. Geospatial calculations use Turf.js, and transit boundary data is compressed with TopoJSON. I used Figma (mostly for the logo) and Claude Code. All vibe coded with natural language. 21 PRs and 81 commits over about a day and a half.",
-  },
-  {
-    q: 'What parts did you do vs Claude?',
-    a: "I did all the product thinking: came up with the concept, chose the data sources, defined how the gap score should work, made the design decisions, and wrote most of the copy (I let Claude do some of the more marketing-y stuff to describe the app). Claude Code handled the implementation, with me creating and reviewing each PR. A bit like being a PM on a one person team.",
-  },
-  {
-    q: 'Why build something like this?',
-    a: (<>I wanted to hint at how the PM role is changing and how I'm changing with it. What PMs used to <em>tell</em>, through lengthy PRDs, hacky wireframes, and lots and lots of meetings, they can now often <em>show</em>, using prototypes, examples, and sometimes by actually shipping. And also, I wanted to show my enthusiasm for this role in particular. I hope I got your attention! 👋</>),
-  },
-  {
-    q: 'How does this connect to the role at Spare?',
-    a: "I wanted to take a problem Spare customers have and make a mini-app that'd get them maybe 5% of the way towards solving it. Though there's some overlap with the Enterprise and AI-focus, video is quite different from what Spare is up to. I want to show that even in a day or two I can start to think a little bit like a PM at Spare. If I were to join Spare, I'd use these skills to build interactive prototypes, brainstorm new ideas with designers, and build internal tools to speed up my own and others' workflows. I've also been building AI agents into my daily workflow, like an automated pipeline that monitors, scores, and surfaces job postings for fit.",
+    q: 'How does this connect to the role at Swiftly?',
+    a: "I picked a problem Swiftly's customers know well: where transit service falls short. Then I built a small interactive piece around it. It also got me hands-on with the kind of data Swiftly works with, like GTFS feeds. As a Customer Training & Adoption Specialist I'd spend my days turning this sort of complexity into training that agencies can actually use. Thanks for scrolling this far.",
   },
 ]
 

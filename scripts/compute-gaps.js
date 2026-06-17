@@ -11,7 +11,7 @@
  *   walking distance (600m for bus, 1200m for rail) of the DA centroid
  * - Normalizes both transit access and population pressure to 0-1
  * - Gap score = population_pressure × (1 - transit_access)
- *   High score = lots of people, little transit (the problem Spare solves)
+ *   High score = lots of people, little transit (the kind of gap transit agencies work to close)
  *
  * Output:
  *   public/data/gap-analysis.geojson (DAs with gap_score added)
