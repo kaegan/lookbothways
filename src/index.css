@@ -4,47 +4,25 @@
 @theme {
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Overpass', sans-serif;
-
-  /* Brand — Miovision blue */
-  --color-brand: #0f75db;
-  --color-brand-hover: #0065ed;
-  --color-brand-light: #eff6ff;
-  --color-brand-border: rgba(15, 117, 219, 0.2);
-
-  /* Text scale */
-  --color-text-primary: #222222;
-  --color-text-secondary: #6a6a6a;
-  --color-text-muted: #929292;
-  --color-text-faint: #b5b5b5;
-
-  /* Surfaces */
-  --color-surface: #ffffff;
-  --color-surface-warm: #fafafa;
-  --color-surface-hover: #f5f5f5;
-
-  /* Borders */
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-strong: rgba(0, 0, 0, 0.14);
-
-  /* Map risk gradient */
   --color-gap-low: #fef3c7;
   --color-gap-mid: #f97316;
   --color-gap-high: #dc2626;
-
-  /* Panels */
-  --color-panel: #ffffff;
-  --color-panel-border: rgba(0, 0, 0, 0.10);
-
-  /* Shadows */
-  --shadow-card: 0px 1px 2px rgba(0,0,0,0.05);
-  --shadow-panel: 0px 1px 3px rgba(0,0,0,0.06);
+  --color-panel: rgba(255, 255, 255, 0.80);
+  --color-panel-border: rgba(209, 213, 219, 0.6);
 }
 
 .cs-panel {
   background: var(--color-panel);
   border: 1px solid var(--color-panel-border);
   border-radius: 8px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* backdrop-filter is GPU-intensive on Mobile Safari; only enable on desktop */
+@media (min-width: 768px) {
+  .cs-panel {
+    backdrop-filter: blur(12px);
+  }
 }
 
 /* Override Leaflet's default styles for light theme */
@@ -55,14 +33,14 @@
 }
 
 .leaflet-popup-content-wrapper {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92);
   color: #1f2937;
   border: 1px solid rgba(209, 213, 219, 0.5);
   border-radius: 8px;
 }
 
 .leaflet-popup-tip {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .leaflet-popup-close-button {
@@ -110,29 +88,18 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-surface);
-  color: var(--color-text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+/* ── Marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.25);
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  display: flex;
+  width: max-content;
+  align-items: center;
 }
 
 /* ── Report card slide-in ── */

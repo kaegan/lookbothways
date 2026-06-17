@@ -1,34 +1,34 @@
-import { getRiskColor } from './colors'
+import { getGapColor } from './colors'
 
-/**
- * Aggregate stats across every signalized intersection, used to position a
- * single intersection against the city (percentiles, averages, totals).
- */
-export function computeCityStats(geojson) {
-  const features = geojson.features
-  const riskScores = []
-  let totalCrashes = 0
-  let totalCasualty = 0
-  let highRiskCount = 0
+export function computeMetroStats(gapGeoJSON) {
+  const features = gapGeoJSON.features
+  const gapScores = []
+  const transitScores = []
+  const popDensities = []
+  let totalPopulation = 0
 
   for (const f of features) {
     const p = f.properties
-    riskScores.push(p.risk_score || 0)
-    totalCrashes += p.total_crashes || 0
-    totalCasualty += p.casualty_crashes || 0
-    if ((p.risk_score || 0) > 0.6) highRiskCount++
+    gapScores.push(p.gap_score || 0)
+    transitScores.push(p.transit_score || 0)
+    popDensities.push(p.pop_density || 0)
+    totalPopulation += p.population || 0
   }
 
-  riskScores.sort((a, b) => a - b)
+  gapScores.sort((a, b) => a - b)
+  transitScores.sort((a, b) => a - b)
+  popDensities.sort((a, b) => a - b)
+
   const avg = arr => arr.reduce((s, v) => s + v, 0) / arr.length
 
   return {
-    avgRiskScore: avg(riskScores),
-    riskScores,
-    totalCrashes,
-    totalCasualty,
-    highRiskCount,
-    intersectionCount: features.length,
+    avgGapScore: avg(gapScores),
+    avgTransitScore: avg(transitScores),
+    avgPopDensity: avg(popDensities),
+    totalPopulation,
+    gapScores,
+    transitScores,
+    popDensities,
   }
 }
 
@@ -42,24 +42,31 @@ export function getPercentile(value, sortedArray) {
 }
 
 export function getPercentileLabel(percentile) {
-  if (percentile <= 20) return `Safer than ${Math.max(1, 100 - percentile)}%`
-  if (percentile >= 80) return `Top ${Math.max(1, 100 - percentile)}% riskiest`
+  if (percentile <= 20) return `Bottom ${percentile}%`
+  if (percentile >= 80) return `Top ${100 - percentile}%`
   return `${percentile}th percentile`
 }
 
 const GRADES = [
-  { max: 0.2, letter: 'A', label: 'Very safe' },
-  { max: 0.4, letter: 'B', label: 'Low risk' },
-  { max: 0.6, letter: 'C', label: 'Moderate risk' },
-  { max: 0.8, letter: 'D', label: 'High risk' },
-  { max: 1.01, letter: 'F', label: 'Critical risk' },
+  { max: 0.2, letter: 'A', label: 'Well covered', textColor: '#15803d' },
+  { max: 0.4, letter: 'B', label: 'Adequate coverage', textColor: '#a16207' },
+  { max: 0.6, letter: 'C', label: 'Below average', textColor: '#c2410c' },
+  { max: 0.8, letter: 'D', label: 'Poorly covered', textColor: '#dc2626' },
+  { max: 1.0, letter: 'F', label: 'Severely underserved', textColor: '#991b1b' },
 ]
 
-export function getGrade(riskScore) {
+export const LOW_DENSITY_GRADE = {
+  letter: '\u2013',
+  label: 'Low density',
+  color: '#9ca3af',
+}
+
+export function getGrade(gapScore, lowDensity) {
+  if (lowDensity) return LOW_DENSITY_GRADE
   for (const g of GRADES) {
-    if (riskScore <= g.max) {
-      return { letter: g.letter, label: g.label, color: getRiskColor(riskScore) }
+    if (gapScore <= g.max) {
+      return { letter: g.letter, label: g.label, color: getGapColor(gapScore), textColor: g.textColor }
     }
   }
-  return { letter: 'F', label: 'Critical risk', color: getRiskColor(1) }
+  return { letter: 'F', label: 'Severely underserved', color: getGapColor(1), textColor: '#991b1b' }
 }
