@@ -75,7 +75,7 @@ export const sections = [
     iconName: 'MagicWandSparkle',
     headline: 'AI is part of how I work',
     accentWord: 'AI',
-    body: "I'm not an engineer, but I build things with AI. At Lumen5 I built an LLM-powered script workflow that cut the time to make a video by 30%, and I built this whole site the same way. I'd bring that to training content here: drafting materials, scripting walkthroughs, and figuring out what to hand to AI so I can spend my time on the parts that need a person.",
+    body: "I'm not an engineer, but I build things with AI, like this entire site. Over 7 years at Lumen5, I worked alongside designers and engineers to build an AI-powered video creator, and I'd bring that same approach to training content: drafting materials, scripting walkthroughs, and knowing what to hand to AI so I can spend my time on the parts that need a real person.",
     screenshot: {
       src: neighborhoodScored,
       alt: 'MindTheGap — a transit coverage map I built to introduce myself',
@@ -86,7 +86,7 @@ export const sections = [
   {
     id: 'contact',
     headline: "Let's talk",
-    body: "I'd love the chance to chat about the Customer Training & Adoption role. I'm looking for a place where I can combine my experience building both products and programs to support customers, around a mission I care about. The chance to travel and work directly with agencies is a big part of the pull. To me, that's Swiftly.",
+    body: "I'm looking for a place where I can combine my experience building both products and programs to support customers, around a mission I care about. The chance to travel and work directly with agencies is a big part of the pull. Swiftly feels like just the place.",
     links: [
       { label: 'Email me', url: 'mailto:hello@mindthegap.fyi', primary: true, icon: 'email' },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/kaegandonnelly', icon: 'linkedin' },
