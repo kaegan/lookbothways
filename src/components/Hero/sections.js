@@ -1,14 +1,13 @@
 import enterpriseCheque from '../../assets/enterprise_cheque.jpg'
-import neighborhoodScored from '../../assets/neighborhood-scored.png'
 
 export const sections = [
   {
     id: 'why-swiftly',
     tag: 'Career Path',
     iconName: 'Route',
-    headline: 'My career actually started in training',
-    accentWord: 'training',
-    body: "I studied Human Geography at UBC with the goal of becoming a planner. Life took a surprise turn to tech, where I started out in support and training and have woven those skills through every role since. Most recently I spent 7+ years at Lumen5.",
+    headline: 'I started my career helping customers',
+    accentWord: 'helping customers',
+    body: "I studied Human Geography at UBC with the goal of becoming a planner. Life took a surprise turn to tech, where I started out in support and training and have woven those skills through every role since. Most recently I spent 7+ years at Lumen5 in roles across marketing, customer success, and product.",
     timeline: [
       { label: 'Apple', sub: 'Genius / training' },
       { label: 'Hootsuite', sub: 'Support + Ops' },
@@ -24,7 +23,7 @@ export const sections = [
     iconName: 'Megaphone',
     headline: "I love teaching people how products work",
     accentWord: 'teaching',
-    body: "I've been training people since my days as an Apple Genius, and I never really stopped, from hands-on sessions for founders at Baremetrics to “training the trainers” on every new feature at Lumen5. I loved being the face of the product. Years building a tool for educational video taught me how to make a 30-second walkthrough do the work of a support doc.",
+    body: "I've been training people since my days as an Apple Genius, and I never really stopped, from hands-on sessions for founders at Baremetrics to “training the trainers” on every new feature at Lumen5. I loved being the face of the product.",
     youtube: 'https://www.youtube.com/embed/d9VSYecC5YM',
     youtubeCaption: 'A product walkthrough I recorded. The bus scroll behind me is real, I have the whole roll. 🙊',
     bg: 'bg-white',
@@ -75,12 +74,7 @@ export const sections = [
     iconName: 'MagicWandSparkle',
     headline: 'AI is part of how I work',
     accentWord: 'AI',
-    body: "I'm not an engineer, but I build things with AI, like this entire site. Over 7 years at Lumen5, I worked alongside designers and engineers to build an AI-powered video creator, and I'd bring that same approach to training content: drafting materials, scripting walkthroughs, and knowing what to hand to AI so I can spend my time on the parts that need a real person.",
-    screenshot: {
-      src: neighborhoodScored,
-      alt: 'MindTheGap — a transit coverage map I built to introduce myself',
-    },
-    techLogos: true,
+    body: "Over 7 years at Lumen5, I worked alongside designers and engineers to build an AI-powered video creator. I would use my AI skills to automate the laborious parts of the role, like updating documentation, giving me more hands-on time with customers.",    techLogos: true,
     bg: 'bg-white',
   },
   {

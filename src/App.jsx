@@ -19,7 +19,7 @@ function App() {
           67,000 residents live in Metro Vancouver's transit blind spots
         </h1>
         <p className="text-lg sm:text-xl text-gray-500 max-w-2xl leading-relaxed mb-10">
-          MindTheGap finds coverage gaps – areas where people live but buses and trains don't reach.
+          MindTheGap finds areas where people live but buses and trains don't reach.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-8">
@@ -39,12 +39,6 @@ function App() {
 
       {/* ── Map ── */}
       <div id="map">
-        <div className="text-center mb-6 px-6">
-          <p className="text-xs tracking-[0.2em] text-gray-500 mb-2">Transit Coverage Analysis</p>
-          <p className="text-sm text-gray-500 max-w-lg mx-auto">
-            Every colored zone is a dissemination area. Transit access is measured within a 600m walking radius. The redder the zone, the more people are underserved.
-          </p>
-        </div>
         <div className="mx-4 sm:mx-8 rounded-xl border border-gray-200 max-w-7xl lg:mx-auto overflow-hidden">
           <MapSection />
         </div>
@@ -65,11 +59,7 @@ function App() {
           </p>
           <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
             At 10 years old, I put on my best (only) suit and asked my mom to drive me to city hall so I could speak at a community hearing about the proposed Evergreen Line. It took two more decades, but the line was eventually built.
-          </p>
-          <p className="mt-3 text-base sm:text-lg text-gray-500 max-w-xl mx-auto italic">
-            I choose to believe these events are related.
-          </p>
-          <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
+          </p>          <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-xl mx-auto">
             These days I'm a daily transit rider, and reliability is what decides whether I take the bus or drive. When TransLink floated a plan to speed up the #19 that runs past my house by spacing out the stops, I read every detail and wrote in with my thoughts.
           </p>
         </div>

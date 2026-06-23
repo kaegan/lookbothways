@@ -4,6 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server: {
+    // Honor the PORT assigned by the Claude Code managed preview (autoPort).
+    // Falls back to Vite's default when PORT is unset (e.g. `npm run dev`).
+    port: process.env.PORT ? Number(process.env.PORT) : undefined,
+  },
   build: {
     rollupOptions: {
       output: {
