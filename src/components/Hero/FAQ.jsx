@@ -62,7 +62,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative px-6 sm:px-12 py-16 sm:py-24 bg-gray-50"
+      className="relative px-6 sm:px-12 py-16 sm:py-24 bg-gray-50 border-t border-rule"
     >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-bold text-ink mb-8 tracking-tight font-heading">

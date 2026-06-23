@@ -2,6 +2,8 @@ import Header from './components/Layout/Header'
 import MapSection from './components/Map/MapSection'
 import ProductFeatures from './components/Product/ProductFeatures'
 import HeroSections from './components/Hero/HeroSections'
+import Section from './components/Hero/Section'
+import { contactSection } from './components/Hero/sections'
 import FAQ from './components/Hero/FAQ'
 import Footer from './components/Layout/Footer'
 
@@ -105,6 +107,7 @@ function App() {
 
       <HeroSections />
       <FAQ />
+      <Section section={contactSection} />
       <Footer />
     </div>
   )
