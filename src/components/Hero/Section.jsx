@@ -1,18 +1,10 @@
 import posthog from 'posthog-js'
-import { IconRouteFillDuo18 as Route } from 'nucleo-ui-fill-duo-18'
-import { IconMegaphoneFillDuo18 as Megaphone } from 'nucleo-ui-fill-duo-18'
-import { IconTargetFillDuo18 as Target } from 'nucleo-ui-fill-duo-18'
-import { IconOfficeFillDuo18 as Office } from 'nucleo-ui-fill-duo-18'
-import { IconMagicWandSparkleFillDuo18 as MagicWandSparkle } from 'nucleo-ui-fill-duo-18'
 import StatCard from './StatCard'
 import Timeline from './Timeline'
-import LogoMarquee from './LogoMarquee'
+import ClientLogos from './ClientLogos'
 import TechLogos from './TechLogos'
 import YouTubeEmbed from './YouTubeEmbed'
 import StationTag from './StationTag'
-import { linkIcons } from './linkIcons'
-
-const tagIcons = { Route, Megaphone, Target, Office, MagicWandSparkle }
 
 function HighlightedHeadline({ text, accentWord }) {
   if (!accentWord) return text
@@ -38,7 +30,7 @@ export default function Section({ section, showDivider }) {
         <div className="max-w-3xl mx-auto">
           {section.tag && (
             <div className="mb-5">
-              <StationTag icon={tagIcons[section.iconName]} label={section.tag} />
+              <StationTag label={section.tag} />
             </div>
           )}
 
@@ -136,7 +128,7 @@ export default function Section({ section, showDivider }) {
             </div>
           )}
 
-          {section.logos && <LogoMarquee logos={section.logos} />}
+          {section.logos && <ClientLogos logos={section.logos} label={section.logosLabel} />}
 
           {section.techLogos && <TechLogos />}
 
@@ -163,7 +155,6 @@ export default function Section({ section, showDivider }) {
                     : 'border border-ink text-ink hover:bg-ink hover:text-white'
                   }`}
                 >
-                  {link.icon && linkIcons[link.icon]}
                   {link.label}
                 </a>
               ))}

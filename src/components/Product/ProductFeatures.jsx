@@ -29,7 +29,7 @@ const features = [
   {
     icon: Layers,
     tag: 'Multi-Modal Layers',
-    headline: 'Trains and Buses, all in the same spot',
+    headline: 'Trains and buses, all in the same spot',
     body: "Toggle transit layers on and off to see how different modes overlap. Quickly spot where rail coverage ends and bus routes don't pick up the slack.",
     screenshot: transitLayersImg,
     alt: 'Map with SkyTrain, bus, and SeaBus transit layers toggled on',
@@ -72,14 +72,13 @@ function ScreenshotFrame({ feature }) {
 
 function FeatureBlock({ feature, index }) {
   const isReversed = index % 2 !== 0
-  const Icon = feature.icon
 
   return (
     <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-10 lg:gap-16`}>
       {/* Text side */}
       <div className="flex-1 min-w-0">
         <div className="mb-4">
-          <StationTag icon={Icon} label={feature.tag} />
+          <StationTag label={feature.tag} />
         </div>
         <h3 className="text-2xl sm:text-3xl font-extrabold text-ink mb-3 tracking-tight font-heading">
           {feature.headline}

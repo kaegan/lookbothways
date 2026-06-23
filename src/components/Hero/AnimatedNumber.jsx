@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function AnimatedNumber({ target, suffix, visible }) {
+export default function AnimatedNumber({ target, suffix, visible, colorClass = 'text-ink' }) {
   const [current, setCurrent] = useState(0)
   const hasRun = useRef(false)
 
@@ -21,7 +21,7 @@ export default function AnimatedNumber({ target, suffix, visible }) {
   }, [visible, target])
 
   return (
-    <span className="text-3xl sm:text-4xl font-extrabold font-heading text-ink tracking-tight" aria-label={`${target}${suffix}`}>
+    <span className={`text-4xl sm:text-[2.5rem] font-bold font-heading tracking-tight leading-none ${colorClass}`} aria-label={`${target}${suffix}`}>
       {current}{suffix}
     </span>
   )
