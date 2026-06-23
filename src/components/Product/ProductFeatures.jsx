@@ -101,14 +101,6 @@ export default function ProductFeatures() {
   return (
     <section className="relative bg-white py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-6 sm:px-12">
-        {/* Section header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <p className="text-xs tracking-[0.2em] text-gray-500 mb-3">How it works</p>
-          <p className="mt-4 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
-            Transit maps show where service exists. MindTheGap shows where it doesn't, and how many people are affected.
-          </p>
-        </div>
-
         {/* Feature blocks */}
         <div className="space-y-16 sm:space-y-20">
           {features.map((feature, i) => (
