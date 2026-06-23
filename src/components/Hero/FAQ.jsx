@@ -33,15 +33,15 @@ function FAQItem({ q, a }) {
   }, [open])
 
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-rule">
       <button
         className="w-full flex items-center justify-between py-5 text-left group"
         onClick={() => { if (!open) posthog.capture('faq_opened', { question: q }); setOpen(!open) }}
       >
-        <span className="text-base sm:text-lg font-medium text-gray-900 group-hover:text-violet-600 transition-colors pr-4">
+        <span className="text-base sm:text-lg font-semibold text-ink group-hover:text-transit transition-colors pr-4">
           {q}
         </span>
-        <span className={`text-gray-500 shrink-0 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>
+        <span className={`text-faint group-hover:text-transit shrink-0 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>
           <Plus className="w-5 h-5" />
         </span>
       </button>
@@ -50,7 +50,7 @@ function FAQItem({ q, a }) {
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ maxHeight: open ? `${height}px` : '0px', opacity: open ? 1 : 0 }}
       >
-        <div className="pb-5 text-gray-500 leading-relaxed text-sm sm:text-base max-w-2xl">
+        <div className="pb-5 text-graphite leading-relaxed text-sm sm:text-base max-w-2xl">
           {a}
         </div>
       </div>
@@ -65,7 +65,7 @@ export default function FAQ() {
       className="relative px-6 sm:px-12 py-16 sm:py-24 bg-gray-50"
     >
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-8 tracking-tight font-heading">
+        <h2 className="text-4xl sm:text-5xl font-bold text-ink mb-8 tracking-tight font-heading">
           FAQ
         </h2>
         <div>

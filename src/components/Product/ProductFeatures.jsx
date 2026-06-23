@@ -3,6 +3,7 @@ import { IconMapFillDuo18 as Map } from 'nucleo-ui-fill-duo-18'
 import { IconCursorRippleFillDuo18 as MousePointerClick } from 'nucleo-ui-fill-duo-18'
 import { IconLayersFillDuo18 as Layers } from 'nucleo-ui-fill-duo-18'
 import { IconHotspotFillDuo18 as BarChart3 } from 'nucleo-ui-fill-duo-18'
+import StationTag from '../Hero/StationTag'
 import neighborhoodScoredImg from '../../assets/neighborhood-scored.png'
 import fullPictureImg from '../../assets/full-picture.png'
 import transitLayersImg from '../../assets/transit-layers.png'
@@ -48,7 +49,7 @@ function ScreenshotFrame({ feature }) {
   const Icon = feature.icon
 
   return (
-    <div className="relative rounded-xl overflow-hidden border border-gray-200 shadow-lg">
+    <div className="relative rounded-[4px] overflow-hidden border-2 border-ink">
       {!imgError ? (
         <img
           src={feature.screenshot}
@@ -58,7 +59,7 @@ function ScreenshotFrame({ feature }) {
           onError={() => setImgError(true)}
         />
       ) : (
-        <div className="aspect-video flex items-center justify-center bg-gray-50 text-gray-400">
+        <div className="aspect-video flex items-center justify-center cs-hatch text-faint">
           <div className="text-center">
             <Icon className="w-10 h-10 mx-auto mb-2" />
             <span className="text-sm">Screenshot: {feature.tag}</span>
@@ -77,14 +78,13 @@ function FeatureBlock({ feature, index }) {
     <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-10 lg:gap-16`}>
       {/* Text side */}
       <div className="flex-1 min-w-0">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-50 border border-violet-200 mb-4">
-          <Icon className="w-3.5 h-3.5 text-violet-500" />
-          <span className="text-xs font-medium text-violet-600 tracking-wider">{feature.tag}</span>
+        <div className="mb-4">
+          <StationTag icon={Icon} label={feature.tag} />
         </div>
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3 font-heading">
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-ink mb-3 tracking-tight font-heading">
           {feature.headline}
         </h3>
-        <p className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-lg">
+        <p className="text-base sm:text-lg text-graphite leading-relaxed max-w-lg">
           {feature.body}
         </p>
       </div>
