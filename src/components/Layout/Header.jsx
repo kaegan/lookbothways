@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import posthog from 'posthog-js'
+import NamePlate from './NamePlate'
 const Menu = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 )
 const X = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 )
-import logoSvg from '../../assets/mindthegap-logo.svg'
 
 const navLinks = [
   { label: 'Map', href: '/#map' },
@@ -20,25 +20,21 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[1000] bg-white/80 backdrop-blur-md border-b border-gray-200">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
-        {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img
-            src={logoSvg}
-            alt="Mind the Gap"
-            className="h-10 sm:h-14"
-          />
+    <header className="fixed top-0 left-0 right-0 z-[1000] bg-white/95 backdrop-blur-md border-b-2 border-ink">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 sm:px-8 py-3.5">
+        {/* Name-plate logo */}
+        <Link to="/" className="flex items-center" aria-label="Mind the Gap">
+          <NamePlate />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden sm:flex items-center gap-6">
+        <nav className="hidden sm:flex items-center gap-7 text-sm font-medium">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => posthog.capture('nav_clicked', { label: link.label, href: link.href })}
-              className="text-sm text-gray-700 hover:text-gray-900 transition-colors"
+              className="text-ink hover:text-transit transition-colors"
             >
               {link.label}
             </a>
@@ -46,15 +42,15 @@ export default function Header() {
           <a
             href="/#contact"
             onClick={() => posthog.capture('nav_clicked', { label: 'Get in touch', href: '/#contact' })}
-            className="text-sm font-medium text-gray-700 border border-gray-300 hover:border-gray-400 hover:bg-gray-50 px-4 py-2 rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-ink text-white font-semibold px-4 py-2.5 rounded-[3px] hover:bg-transit transition-colors whitespace-nowrap"
           >
-            Get in touch
+            Get in touch <span aria-hidden="true">&#8594;</span>
           </a>
         </nav>
 
         {/* Mobile hamburger */}
         <button
-          className="sm:hidden text-black hover:text-black/70"
+          className="sm:hidden text-ink hover:text-transit transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -68,12 +64,12 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="sm:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 px-6 py-4 flex flex-col gap-3">
+        <nav className="sm:hidden bg-white border-t-2 border-ink px-6 py-4 flex flex-col gap-3">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-gray-700 hover:text-gray-900 transition-colors py-1"
+              className="text-sm font-medium text-ink hover:text-transit transition-colors py-1"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
@@ -81,10 +77,10 @@ export default function Header() {
           ))}
           <a
             href="/#contact"
-            className="text-sm font-medium text-gray-700 border border-gray-300 hover:border-gray-400 px-4 py-2 rounded-lg transition-colors text-center mt-2"
+            className="inline-flex items-center justify-center gap-2 bg-ink text-white text-sm font-semibold px-4 py-2.5 rounded-[3px] hover:bg-transit transition-colors text-center mt-2"
             onClick={() => setMenuOpen(false)}
           >
-            Get in touch
+            Get in touch <span aria-hidden="true">&#8594;</span>
           </a>
         </nav>
       )}

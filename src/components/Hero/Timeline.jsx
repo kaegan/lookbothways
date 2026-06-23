@@ -1,26 +1,27 @@
+// Beck-style transit line: a thick ink rail with ringed station nodes,
+// terminating in a red "you are here" station.
 export default function Timeline({ steps }) {
   return (
-    <div className="mt-10 pb-2">
+    <div className="mt-12 pb-2">
       <div className="relative">
-        <div className="absolute top-[7px] left-[10%] right-[10%] h-0.5 bg-gray-200 rounded-full" />
+        {/* The line — aligned to the centres of the first and last nodes */}
+        <div className="absolute left-[10%] right-[10%] top-[13px] h-1.5 bg-ink rounded-full" />
 
-        <div className="flex items-start justify-between w-full">
+        <div className="relative flex justify-between">
           {steps.map((step) => (
-            <div key={step.label} className="flex flex-col items-center flex-1 min-w-0">
-              <div className="relative z-10">
-                <div
-                  className={`w-3.5 h-3.5 rounded-full border-2 ${
-                    step.highlight
-                      ? 'bg-violet-500 border-violet-400'
-                      : 'bg-white border-gray-300'
-                  }`}
-                />
-              </div>
-              <div className="mt-3 text-center px-1">
-                <div className={`text-sm font-semibold ${step.highlight ? 'text-gray-900' : 'text-gray-700'}`}>
-                  {step.label}
+            <div key={step.label} className="flex-1 flex flex-col items-center text-center px-1 min-w-0">
+              {step.highlight ? (
+                <div className="w-[38px] h-[38px] -mt-[3px] mb-[13px] rounded-full bg-transit border-[6px] border-transit flex items-center justify-center">
+                  <span className="w-[11px] h-[11px] rounded-full bg-white" />
                 </div>
-                <div className="text-xs text-gray-500 mt-0.5 leading-snug">{step.sub}</div>
+              ) : (
+                <div className="w-8 h-8 mb-4 rounded-full bg-white border-[6px] border-ink" />
+              )}
+              <div className="text-[13px] sm:text-base font-bold text-ink leading-tight">
+                {step.label}
+              </div>
+              <div className={`text-[11px] sm:text-[13px] mt-1 leading-snug ${step.highlight ? 'text-transit font-semibold' : 'text-faint'}`}>
+                {step.sub}
               </div>
             </div>
           ))}
