@@ -6,7 +6,7 @@ export const sections = [
     tag: 'Career Path',
     headline: 'I started in customer success and never lost the instinct',
     accentWord: 'customer success',
-    body: "I studied Human Geography at UBC with the goal of becoming a planner. Life took a surprise turn to tech, where I started out in marketing and customer success before spending 7+ years at Lumen5, where my role grew from product manager to Head of Product. Along the way I never stopped doing product marketing — writing launch copy, training sales, and building the collateral that brought our features to market.",
+    body: "I studied Human Geography at UBC with the goal of becoming a planner. Life took a surprise turn to tech, where I started out in marketing and customer success before spending 7+ years at Lumen5. I joined as a generalist and left as Head of Product, but I never stopped doing product marketing along the way. I wrote launch copy, trained sales, built landing pages. If a feature shipped, I was probably the one figuring out how to talk about it.",
     timeline: [
       { label: 'Apple', sub: 'Genius / training' },
       { label: 'Hootsuite', sub: 'Support + Ops' },
@@ -36,8 +36,8 @@ export const sections = [
     accentWord: 'launches landed',
     stats: [
       { value: '40%', numericValue: 40, suffix: '%', accent: true, label: 'lift in paid purchases after repositioning Lumen5 around AI voiceover videos powered by ElevenLabs' },
-      { value: '3–4x', numericValue: 3, suffix: '–4x', label: 'product launches per quarter, owned end-to-end: release notes, walkthrough videos, sales training, and external comms' },
-      { value: '20–40%', numericValue: 20, suffix: '–40%', label: 'YoY enterprise revenue growth after leading the GTM pivot from self-serve freemium to Enterprise' },
+      { value: '3–4x', numericValue: 3, suffix: '–4x', label: 'product launches per quarter, each one with release notes, walkthrough videos, sales training, and external comms' },
+      { value: '20–40%', numericValue: 20, suffix: '–40%', label: 'YoY enterprise revenue growth since I led the pivot from self-serve freemium to Enterprise' },
     ],
     bg: 'bg-gray-50',
   },
@@ -46,7 +46,7 @@ export const sections = [
     tag: 'Enterprise Repositioning',
     headline: "I led a pivot that meant repositioning everything",
     accentWord: 'repositioning everything',
-    body: "When the self-serve market got crowded, I led Lumen5's transition from freemium to Enterprise. It meant new positioning, new messaging, new sales enablement materials, and a completely different buyer persona. We went from marketing to individual creators to selling to brand teams at companies like KPMG, PwC, and Siemens. The Enterprise business has grown 20-40% YoY in the five years since.",
+    body: "When the self-serve market got crowded, I led Lumen5's transition from freemium to Enterprise. Completely different buyer, completely different pitch. We went from marketing to individual creators to selling to brand teams at KPMG, PwC, and Siemens. I rebuilt the positioning, wrote new sales enablement materials, and ran training so the team could actually sell it. The Enterprise business has grown 20-40% YoY in the five years since.",
     image: {
       src: enterpriseCheque,
       alt: 'A framed $1,000 check, our first enterprise payment',
@@ -61,7 +61,7 @@ export const sections = [
     tag: 'Shipping AI',
     headline: "I've been shipping AI products since 2018",
     accentWord: 'AI products',
-    body: "Over 7 years at Lumen5 I shipped AI-powered features from concept to launch. I introduced an LLM-powered script builder that hit 1.7x its adoption target, and led the transition to AI voiceover videos that boosted paid purchases by 40%. When you've been in the room for the discovery calls, the technical trade-offs, and the launch metrics, you can write product copy that sounds credible — because it is.",
+    body: "Over 7 years at Lumen5 I shipped AI-powered features from concept to launch. I introduced an LLM-powered script builder that hit 1.7x its adoption target. I led the transition to AI voiceover videos (powered by ElevenLabs) that boosted paid purchases by 40%. I've sat in the discovery calls, argued the technical trade-offs, and watched the launch metrics. That's why I can write product copy that actually holds up.",
     techLogos: true,
     bg: 'bg-white',
   },
@@ -71,7 +71,7 @@ export const sections = [
 export const contactSection = {
   id: 'contact',
   headline: "Let's talk",
-  body: "I'm looking for a place where I can combine my product and marketing experience around a mission I care about. Miovision sits right at the intersection of cities, mobility, and AI — exactly the kind of problem I do my best work on. I want to be the person who tells that story to the cities that need to hear it.",
+  body: "I'm looking for a place where I can combine my product and marketing experience around a mission I care about. Miovision sits right at the intersection of cities, mobility, and AI. That's exactly where I do my best work. I'd love to be the person telling that story.",
   links: [
     { label: 'Email me', url: 'mailto:hello@lookbothways.fyi', primary: true },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/kaegandonnelly' },
