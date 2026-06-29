@@ -1,35 +1,13 @@
-import { useState } from 'react'
-import { IconMapPinFillDuo18 as MapPin } from 'nucleo-ui-fill-duo-18'
-
-export default function Legend({ showHotspots, showPopDensity }) {
-  const [open, setOpen] = useState(() => window.innerWidth >= 640)
+export default function Legend({ showHotspots, showRisk }) {
+  if (!showHotspots && !showRisk) return null
 
   return (
-    <div className="absolute bottom-20 left-4 z-[900]">
-      {!open && (
-        <button
-          onClick={() => setOpen(true)}
-          className="cs-panel p-2 cursor-pointer hover:bg-white/90 transition-colors"
-          aria-label="Show coverage gap legend"
-        >
-          <MapPin size={20} style={{ color: '#f97316' }} />
-        </button>
-      )}
-
-      {open && (
-        <div className="cs-panel p-4 animate-[legend-panel-in_150ms_ease-out]">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-xs font-semibold text-gray-400 tracking-wider font-heading">
-              Coverage Gap
-            </h3>
-            <button
-              onClick={() => setOpen(false)}
-              className="text-gray-400 hover:text-gray-600 transition-colors cursor-pointer -mr-1"
-              aria-label="Collapse legend"
-            >
-              <MapPin size={16} style={{ color: 'currentColor' }} />
-            </button>
-          </div>
+    <div className="absolute bottom-20 left-4 z-[1000] cs-panel p-4">
+      {showRisk && (
+        <>
+          <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 font-heading">
+            Safety Risk
+          </h3>
           <div className="flex items-center gap-1">
             <span className="text-xs text-gray-500">Low</span>
             <div className="flex h-3 rounded overflow-hidden">
@@ -42,52 +20,43 @@ export default function Legend({ showHotspots, showPopDensity }) {
             <span className="text-xs text-gray-500">High</span>
           </div>
           <p className="text-xs text-gray-500 mt-2 max-w-[180px]">
-            Fewer transit trips per resident = larger coverage gap
+            5 years of ICBC crashes per signal, weighted by injury severity. Bigger
+            dot = more crashes.
           </p>
-          <div className="flex items-center gap-1.5 mt-2">
-            <div className="w-4 h-3 rounded" style={{ backgroundColor: '#d1d5db' }} />
-            <span className="text-xs text-gray-500">Low density (ungraded)</span>
+        </>
+      )}
+
+      {showHotspots && (
+        <>
+          <h3 className={`text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 font-heading${showRisk ? ' mt-4' : ''}`}>
+            Top 25 Hotspots
+          </h3>
+          <div className="flex items-center gap-2">
+            {[1, 10, 25].map((rank) => {
+              const size = Math.round(30 - (rank - 1) * (10 / 24))
+              const color = rank <= 5 ? '#dc2626' : rank <= 15 ? '#ef4444' : '#f97316'
+              return (
+                <div key={rank} className="flex flex-col items-center gap-1">
+                  <div
+                    style={{
+                      width: size, height: size, background: color,
+                      borderRadius: '50%', border: '2px solid white',
+                      boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      color: 'white', fontWeight: 700, fontSize: 9,
+                    }}
+                  >
+                    {rank}
+                  </div>
+                  <span className="text-[10px] text-gray-500">#{rank}</span>
+                </div>
+              )
+            })}
           </div>
-
-          {showHotspots && (
-            <>
-              <h3 className="text-xs font-semibold text-gray-400 tracking-wider mt-4 mb-2">
-                Hotspot Clusters
-              </h3>
-              <div className="flex items-center gap-1">
-                <span className="text-xs text-gray-500">Low</span>
-                <div
-                  className="h-3 w-[140px] rounded"
-                  style={{
-                    background: 'linear-gradient(to right, #1e1b4b, #7c3aed, #f59e0b, #f97316, #ef4444, #fef08a)',
-                  }}
-                />
-                <span className="text-xs text-gray-500">High</span>
-              </div>
-            </>
-          )}
-
-          {showPopDensity && (
-            <>
-              <h3 className="text-xs font-semibold text-gray-400 tracking-wider mt-4 mb-2">
-                Population Density
-              </h3>
-              <div className="flex items-center gap-1">
-                <span className="text-xs text-gray-500">Low</span>
-                <div
-                  className="h-3 w-[140px] rounded"
-                  style={{
-                    background: 'linear-gradient(to right, #eff6ff, #93c5fd, #3b82f6, #1d4ed8, #1e3a8a, #312e81)',
-                  }}
-                />
-                <span className="text-xs text-gray-500">High</span>
-              </div>
-              <p className="text-xs text-gray-500 mt-1 max-w-[180px]">
-                Residents per km²
-              </p>
-            </>
-          )}
-        </div>
+          <p className="text-xs text-gray-500 mt-1.5 max-w-[180px]">
+            Click any badge to open the intersection report.
+          </p>
+        </>
       )}
     </div>
   )

@@ -4,20 +4,24 @@ import { IconPlusFillDuo18 as Plus } from 'nucleo-ui-fill-duo-18'
 
 const faqs = [
   {
+    q: 'What does this map actually show?',
+    a: 'By default the map shows the 25 most dangerous signalized intersections in Vancouver, ranked by five years of crash data \u2014 click any numbered badge to see the full breakdown. Enable "All intersections" in the layer panel to reveal all 966 signals: bigger, redder dots are riskier.',
+  },
+  {
     q: 'Where does the data come from?',
-    a: "Transit data comes from TransLink's GTFS feed (stop locations and trip frequencies). Population data comes from Statistics Canada's 2021 Census at the dissemination area level.",
+    a: "Two real open datasets: the City of Vancouver traffic-signals dataset (the 966 signal locations) and ICBC's reported-crash records for Vancouver, 2016\u20132020. Every crash count on the map comes straight from ICBC \u2014 nothing is invented.",
   },
   {
-    q: 'How is the gap score calculated?',
-    a: "For each area, I count the total daily transit trips within a 600-meter walking distance of its centre and divide by the resident population to get trips per capita. That per-capita figure is percentile-ranked against all areas above a density floor (400 people/km\u00B2), and the gap score is the squared inverse of that percentile. Fewer trips per resident = higher gap. Areas below the density floor are shown in gray and left ungraded.",
+    q: 'How is the risk score calculated?',
+    a: "Each crash is snapped to its nearest signal within 50 metres. For every intersection I tally total crashes and weight injury (casualty) crashes 3\u00D7 property-damage ones, then rank all 966 intersections into a 0\u20131 percentile. The score is relative: a 0.9 means riskier than 90% of Vancouver signals.",
   },
   {
-    q: 'Is the data accurate?',
-    a: "It's directional, not definitive. The GTFS feed captures scheduled service, not real-time reliability, and the census data is from 2021 so new developments won't show up. Some edges are rough (e.g. a zone near a SkyTrain station might still score high if bus feeder routes are sparse). This is a starting point for conversation, not a planning tool.",
+    q: 'Is the data definitive?',
+    a: "It's directional, not definitive. ICBC data captures reported crashes, so unreported near-misses are invisible, and 2020 reflects far less traffic during COVID-19. Snapping crashes to the nearest signal is a heuristic, not a forensic reconstruction. This is a starting point for a conversation, not a final engineering judgment.",
   },
   {
-    q: 'How does this connect to the role at Swiftly?',
-    a: "I picked a problem Swiftly's customers know well: where transit service falls short. Then I built a small interactive piece around it. It also got me hands-on with the kind of data Swiftly works with, like GTFS feeds. As a Customer Training & Adoption Specialist I'd spend my days turning this sort of complexity into training that agencies can actually use. Thanks for scrolling this far.",
+    q: 'How does this connect to the Product Marketing role?',
+    a: (<>Product marketing is the work of turning something complex into a story a buyer can act on. I took a messy public dataset, found the angle, and built an interactive piece that makes the point at a glance &mdash; positioning, messaging, and content in miniature, in Miovision's exact domain. Moving this fast leans hard on AI fluency; I like <a href="https://x.com/wadefoster/status/2038979630590509553" target="_blank" rel="noopener noreferrer" className="text-transit underline hover:text-ink transition-colors">this AI fluency rubric from Zapier</a> and I'd put myself in the "adoptive" tier, working toward transformative. Thanks for scrolling this far.</>),
   },
 ]
 

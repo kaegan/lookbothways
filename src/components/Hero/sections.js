@@ -2,7 +2,7 @@ import enterpriseCheque from '../../assets/enterprise_cheque.jpg'
 
 export const sections = [
   {
-    id: 'why-swiftly',
+    id: 'why-miovision',
     tag: 'Career Path',
     headline: 'I started my career helping customers',
     accentWord: 'helping customers',
@@ -12,7 +12,7 @@ export const sections = [
       { label: 'Hootsuite', sub: 'Support + Ops' },
       { label: 'Baremetrics', sub: 'First biz hire' },
       { label: 'Lumen5', sub: 'AI video, 7+ yrs' },
-      { label: "What's next?", sub: 'Maybe Swiftly?', highlight: true },
+      { label: "What's next?", sub: 'Maybe Miovision?', highlight: true },
     ],
     bg: 'bg-white',
   },
@@ -67,9 +67,9 @@ export const sections = [
 export const contactSection = {
   id: 'contact',
   headline: "Let's talk",
-  body: "I'm looking for a place where I can combine my experience building both products and programs to support customers, around a mission I care about. The chance to travel and work directly with agencies is a big part of the pull. Swiftly feels like just the place.",
+  body: "I'm looking for a place where I can combine my product and marketing experience around a mission I care about. Miovision sits right at the intersection of cities, mobility, and product — exactly the kind of problem I do my best work on. Miovision feels like just the place.",
   links: [
-    { label: 'Email me', url: 'mailto:hello@mindthegap.fyi', primary: true },
+    { label: 'Email me', url: 'mailto:hello@lookbothways.fyi', primary: true },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/kaegandonnelly' },
     { label: 'Resumé', url: 'https://canva.link/a7oxdsgap0r5def' },
   ],

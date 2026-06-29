@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/((?!assets|data|favicon|mindthegap).*)", "destination": "/index.html" }
+    { "source": "/((?!assets|data|favicon|screenshots).*)", "destination": "/index.html" }
   ]
 }

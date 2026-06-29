@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import posthog from 'posthog-js'
-import logoSvg from '../../assets/mindthegap-logo.svg'
+import Wordmark from './Wordmark'
 const Menu = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 )
@@ -23,8 +23,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-[1000] bg-white/95 backdrop-blur-md border-b-2 border-ink">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 sm:px-8 py-3.5">
         {/* Name-plate logo */}
-        <Link to="/" className="flex items-center" aria-label="Mind the Gap">
-          <img src={logoSvg} alt="MindTheGap" className="h-[30px] w-auto block" />
+        <Link to="/" className="flex items-center" aria-label="Look Both Ways">
+          <Wordmark textClass="text-base sm:text-lg" />
         </Link>
 
         {/* Desktop nav */}

@@ -2,45 +2,39 @@ import { useState } from 'react'
 import { IconMapFillDuo18 as Map } from 'nucleo-ui-fill-duo-18'
 import { IconCursorRippleFillDuo18 as MousePointerClick } from 'nucleo-ui-fill-duo-18'
 import { IconLayersFillDuo18 as Layers } from 'nucleo-ui-fill-duo-18'
-import { IconHotspotFillDuo18 as BarChart3 } from 'nucleo-ui-fill-duo-18'
 import StationTag from '../Hero/StationTag'
-import neighborhoodScoredImg from '../../assets/neighborhood-scored.png'
-import fullPictureImg from '../../assets/full-picture.png'
-import transitLayersImg from '../../assets/transit-layers.png'
-import heatmapImg from '../../assets/heatmap.png'
+
+// Screenshots live in /public/screenshots and are referenced by URL so a
+// missing capture degrades to the ScreenshotFrame placeholder instead of
+// breaking the build.
+const rankedOverviewImg = '/screenshots/risk-scored.png'
+const reportCardImg = '/screenshots/report-card.png'
+const injuryFilterImg = '/screenshots/highlight-injury.png'
 
 const features = [
   {
     icon: Map,
-    tag: 'Coverage Analysis',
-    headline: 'A score for every neighbourhood',
-    body: 'MindTheGap analyzes 3,590 dissemination areas across Metro Vancouver. It combines population density with transit accessibility to produce a gap score between 0 and 1 for each zone. The closer to 1, the worse the coverage relative to the population density.',
-    screenshot: neighborhoodScoredImg,
-    alt: 'Heatmap showing transit coverage gaps across Metro Vancouver',
+    tag: 'Ranked Overview',
+    headline: 'The whole city, triaged worst-first',
+    body: "Vancouver's signals arrive pre-ranked. Numbered badges flag the top 25 hotspots — 1 is the city's worst — turning 966 intersections into an ordered, defensible list of where to start.",
+    screenshot: rankedOverviewImg,
+    alt: 'Vancouver map with the 25 highest-risk intersections marked by numbered badges',
   },
   {
     icon: MousePointerClick,
-    tag: 'Interactive Reports',
-    headline: 'Click on a zone to see the full picture',
-    body: "Select a neighbourhood to open a detailed report card. You'll get a gap score grade, population stats, nearest transit stops, and how the area compares to the metro average.",
-    screenshot: fullPictureImg,
-    alt: 'Report card showing gap score, population, and nearby transit stops',
+    tag: 'Evidence Card',
+    headline: 'The crash record behind one signal',
+    body: 'Click any intersection for its dossier: letter grade, percentile, total crashes, injury versus property-only counts, injury rate, a five-year trend, and how it ranks against the city average.',
+    screenshot: reportCardImg,
+    alt: 'Report card showing a risk grade, crash counts, injury rate, and a crashes-by-year chart',
   },
   {
     icon: Layers,
-    tag: 'Multi-Modal Layers',
-    headline: 'Trains and buses, all in the same spot',
-    body: "Toggle transit layers on and off to see how different modes overlap. Quickly spot where rail coverage ends and bus routes don't pick up the slack.",
-    screenshot: transitLayersImg,
-    alt: 'Map with SkyTrain, bus, and SeaBus transit layers toggled on',
-  },
-  {
-    icon: BarChart3,
-    tag: 'Hotspot Detection',
-    headline: 'See where the gaps cluster',
-    body: 'The hotspot layer shows where multiple coverage gaps sit close together, so you can see which neighbourhoods would benefit most from new service.',
-    screenshot: heatmapImg,
-    alt: 'Hotspot heatmap highlighting clusters of transit coverage gaps',
+    tag: 'Targeted Filters',
+    headline: "Narrow to the risk you're funding",
+    body: 'Check High injury rate (≥33%) and the map rings every qualifying signal while the rest fade back. Or isolate pedestrian-actuated signals to focus on vulnerable-road-user exposure.',
+    screenshot: injuryFilterImg,
+    alt: 'Map filtered to intersections with a high injury rate, each ringed with a highlight',
   },
 ]
 

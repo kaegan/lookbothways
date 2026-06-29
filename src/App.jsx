@@ -8,9 +8,9 @@ import FAQ from './components/Hero/FAQ'
 import Footer from './components/Layout/Footer'
 
 const heroStats = [
-  { value: '3,590', label: 'areas analyzed', dot: 'bg-ink', valueColor: 'text-ink' },
-  { value: '67K', label: 'underserved', dot: 'bg-transit', valueColor: 'text-transit' },
-  { value: '72', label: 'critical gaps', dot: 'bg-signal', valueColor: 'text-ink' },
+  { value: '966', label: 'signals scored', dot: 'bg-ink', valueColor: 'text-ink' },
+  { value: '33K', label: 'injury crashes', dot: 'bg-transit', valueColor: 'text-transit' },
+  { value: '383', label: 'high-risk signals', dot: 'bg-signal', valueColor: 'text-ink' },
 ]
 
 function App() {
@@ -27,15 +27,15 @@ function App() {
             <div className="inline-flex items-stretch border-[1.5px] border-ink rounded-[3px] overflow-hidden mb-8">
               <span className="flex items-center bg-ink text-white px-3 text-sm" aria-hidden="true">&#9654;</span>
               <span className="flex items-center px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold tracking-[0.14em]">
-                METRO VANCOUVER&nbsp;&nbsp;·&nbsp;&nbsp;COVERAGE GAP ANALYSIS
+                CITY OF VANCOUVER&nbsp;&nbsp;·&nbsp;&nbsp;INTERSECTION SAFETY
               </span>
             </div>
 
             <h1 className="text-[2.5rem] sm:text-5xl lg:text-[3.6rem] font-bold tracking-tight leading-[1.04] mb-6 font-heading">
-              <span className="text-transit">67,000</span> residents live in Metro Vancouver's transit blind spots
+              Vancouver's <span className="text-transit">most dangerous</span> intersections, scored from real crash data
             </h1>
             <p className="text-lg sm:text-xl text-graphite leading-relaxed max-w-xl">
-              MindTheGap finds areas where people live but buses and trains don't reach.
+              Look Both Ways ranks every signalized intersection on five years of ICBC crashes, then shows where the risk clusters.
             </p>
           </div>
 
@@ -45,9 +45,9 @@ function App() {
             <div className="text-sm font-medium text-ink mb-6">49.2827&deg; N, 123.1207&deg; W</div>
             <div className="text-[11px] tracking-[0.1em] text-faint mb-1.5">METHOD</div>
             <div className="text-[13px] leading-relaxed text-graphite">
-              600&thinsp;m walking radius<br />
-              3,590 dissemination areas<br />
-              2021 census + GTFS
+              50&thinsp;m crash-snap radius<br />
+              966 signalized intersections<br />
+              2016&ndash;2020 ICBC + City of Vancouver
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ function App() {
       <section id="map" className="max-w-6xl mx-auto px-6 sm:px-8 pt-14 sm:pt-16">
         <div className="flex items-center gap-3 flex-wrap mb-4">
           <span className="bg-ink text-white text-[11px] font-bold tracking-[0.12em] px-3 py-1.5 rounded-[3px]">THE MAP</span>
-          <span className="text-sm text-graphite">Every zone scored by how underserved it is. Redder = worse.</span>
+          <span className="text-sm text-graphite">Every signal scored by crash risk. Bigger, redder = worse.</span>
         </div>
         <div className="border-2 border-ink rounded-[4px] overflow-hidden">
           <MapSection />
@@ -95,7 +95,7 @@ function App() {
             The kind of person who shows up to <span className="text-transit">city hall</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-graphite max-w-xl mx-auto">
-            Hi Swiftly! 👋 I'm Kaegan.
+            Hi Miovision! 👋 I'm Kaegan.
           </p>
           <p className="mt-4 text-base sm:text-lg text-graphite max-w-xl mx-auto">
             At 10 years old, I put on my best (only) suit and asked my mom to drive me to city hall so I could speak at a community hearing about the proposed Evergreen Line. It took two more decades, but the line was eventually built.

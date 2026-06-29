@@ -5,9 +5,16 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  // dist is build output; scripts/ are Node-only data-pipeline utilities
+  globalIgnores(['dist', 'scripts']),
+  {
+    // Node-context config files (vite.config.js, etc.)
+    files: ['*.config.js'],
+    languageOptions: { globals: globals.node },
+  },
   {
     files: ['**/*.{js,jsx}'],
+    ignores: ['*.config.js'],
     extends: [
       js.configs.recommended,
       reactHooks.configs.flat.recommended,
