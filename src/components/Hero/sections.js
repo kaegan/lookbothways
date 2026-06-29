@@ -75,7 +75,6 @@ export const contactSection = {
   links: [
     { label: 'Email me', url: 'mailto:hello@lookbothways.fyi', primary: true },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/kaegandonnelly' },
-    { label: 'Resumé', url: 'https://canva.link/a7oxdsgap0r5def' },
   ],
   bg: 'bg-white',
 }
