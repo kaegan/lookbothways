@@ -16,7 +16,7 @@ const features = [
     icon: Map,
     tag: 'Ranked Overview',
     headline: 'The whole city, triaged worst-first',
-    body: "Vancouver's signals arrive pre-ranked. Numbered badges flag the top 25 hotspots — 1 is the city's worst — turning 966 intersections into an ordered, defensible list of where to start.",
+    body: "Vancouver's signals arrive pre-ranked. Numbered badges flag the top 25 hotspots (1 is the city's worst), turning 966 intersections into an ordered, defensible list of where to start.",
     screenshot: rankedOverviewImg,
     alt: 'Vancouver map with the 25 highest-risk intersections marked by numbered badges',
   },

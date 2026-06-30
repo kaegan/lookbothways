@@ -47,7 +47,7 @@ function App() {
             <div className="text-[13px] leading-relaxed text-graphite">
               50&thinsp;m crash-snap radius<br />
               966 signalized intersections<br />
-              2016&ndash;2020 ICBC + City of Vancouver
+              2016-2020 ICBC + City of Vancouver
             </div>
           </div>
         </div>

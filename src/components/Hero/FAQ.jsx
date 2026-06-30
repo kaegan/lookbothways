@@ -5,23 +5,23 @@ import { IconPlusFillDuo18 as Plus } from 'nucleo-ui-fill-duo-18'
 const faqs = [
   {
     q: 'What does this map actually show?',
-    a: 'By default the map shows the 25 most dangerous signalized intersections in Vancouver, ranked by five years of crash data \u2014 click any numbered badge to see the full breakdown. Enable "All intersections" in the layer panel to reveal all 966 signals: bigger, redder dots are riskier.',
+    a: "By default it shows the 25 most dangerous signalized intersections in Vancouver, ranked by five years of crash data. Click any numbered badge for the full breakdown. Flip on 'All intersections' in the layer panel to see all 966 signals at once: bigger, redder dots are riskier.",
   },
   {
     q: 'Where does the data come from?',
-    a: "Two real open datasets: the City of Vancouver traffic-signals dataset (the 966 signal locations) and ICBC's reported-crash records for Vancouver, 2016\u20132020. Every crash count on the map comes straight from ICBC \u2014 nothing is invented.",
+    a: "Two real open datasets: the City of Vancouver traffic-signals dataset (the 966 signal locations) and ICBC's reported-crash records for Vancouver, 2016 to 2020. Every crash count on the map comes straight from ICBC. Nothing is invented.",
   },
   {
     q: 'How is the risk score calculated?',
-    a: "Each crash is snapped to its nearest signal within 50 metres. For every intersection I tally total crashes and weight injury (casualty) crashes 3\u00D7 property-damage ones, then rank all 966 intersections into a 0\u20131 percentile. The score is relative: a 0.9 means riskier than 90% of Vancouver signals.",
+    a: "Each crash gets snapped to its nearest signal within 50 metres. For every intersection I tally total crashes and weight the injury (casualty) ones 3x heavier than property-damage, then rank all 966 into a 0-to-1 percentile. The score is relative: a 0.9 means riskier than 90% of Vancouver signals.",
   },
   {
     q: 'Is the data definitive?',
-    a: "It's directional, not definitive. ICBC data captures reported crashes, so unreported near-misses are invisible, and 2020 reflects far less traffic during COVID-19. Snapping crashes to the nearest signal is a heuristic, not a forensic reconstruction. This is a starting point for a conversation, not a final engineering judgment.",
+    a: "Nope, it's directional. ICBC only captures reported crashes, so near-misses are invisible, and 2020 reflects way less traffic during COVID. Snapping each crash to the nearest signal is a heuristic, not a forensic reconstruction. Think of it as a starting point for a conversation, not a final engineering call.",
   },
   {
     q: 'How does this connect to the Product Marketing role?',
-    a: (<>Product marketing is the work of turning something complex into a story a buyer can act on. I took a messy public dataset, found the angle, and built an interactive piece that makes the point at a glance &mdash; positioning, messaging, and content in miniature, in Miovision's exact domain. Moving this fast leans hard on AI fluency; I like <a href="https://x.com/wadefoster/status/2038979630590509553" target="_blank" rel="noopener noreferrer" className="text-transit underline hover:text-ink transition-colors">this AI fluency rubric from Zapier</a> and I'd put myself in the "adoptive" tier, working toward transformative. Thanks for scrolling this far.</>),
+    a: (<>This whole thing is product marketing in miniature. I took a messy public dataset, found the angle, and built something interactive that makes the point in a glance. That's the job: take something complex and get people to care. I also built it fast, which comes down to AI fluency. I like <a href="https://x.com/wadefoster/status/2038979630590509553" target="_blank" rel="noopener noreferrer" className="text-transit underline hover:text-ink transition-colors">this AI fluency rubric from Zapier</a>, and I'd put myself in the "adoptive" tier and climbing. Thanks for scrolling this far!</>),
   },
 ]
 

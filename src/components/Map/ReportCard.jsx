@@ -144,7 +144,7 @@ export default function ReportCard({ feature, cityStats, onClose }) {
             icon={Crash}
             label="Total crashes"
             value={(p.total_crashes || 0).toLocaleString()}
-            sub="2016–2020"
+            sub="2016-2020"
           />
           <StatBox
             icon={Pulse}

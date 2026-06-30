@@ -6,7 +6,7 @@ export const sections = [
     tag: 'Career Path',
     headline: 'I started in customer success and never lost the instinct',
     accentWord: 'customer success',
-    body: "I studied Human Geography at UBC with the goal of becoming a planner. Life took a surprise turn to tech, where I started out in marketing and customer success before spending 7+ years at Lumen5. I joined as a generalist and left as Head of Product, but I never stopped doing product marketing along the way. I wrote launch copy, trained sales, built landing pages. If a feature shipped, I was probably the one figuring out how to talk about it.",
+    body: "I studied Human Geography at UBC with the goal of becoming a planner. Life took a surprise turn to tech instead. I started out in marketing and customer success, then spent 7+ years at Lumen5. I joined as a generalist and left as Head of Product, but I never stopped doing product marketing along the way. I wrote launch copy, trained sales, built landing pages. If a feature shipped, I was probably the one figuring out how to talk about it.",
     timeline: [
       { label: 'Apple', sub: 'Genius / training' },
       { label: 'Hootsuite', sub: 'Support + Ops' },
@@ -22,8 +22,8 @@ export const sections = [
     headline: "I ran product marketing before we had a product marketer",
     accentWord: 'product marketing',
     body: [
-      "At Lumen5 I was Head of Product in title, but I was also responsible for product marketing my entire time there in various forms. In the early days I ran it as a team of one — building landing pages, writing social posts and emails, coming up with plans and pricing. Later I was more of a player-coach: mentoring our PMM, running training sessions with sales and CX on new features, and project-managing launches. I eventually identified product marketing as a gap and helped hire the first two PMMs to build out the function properly.",
-      "Even as we scaled, I've always been (a bit tongue in cheek) an honorary member of the marketing team.",
+      "At Lumen5 I was Head of Product in title, but I was responsible for product marketing my whole time there in one form or another. In the early days I ran it as a team of one, building landing pages, writing social posts and emails, and coming up with plans and pricing. Later I was more of a player-coach: I'd mentor our PMM, run training sessions with sales and CX on new features, and act as the project manager for launches. Eventually I flagged product marketing as a real gap and helped hire the first two PMMs to build the function out properly.",
+      "Even as we scaled, I've always been (a bit tongue in cheek) an honorary member of our marketing team.",
     ],
     youtube: 'https://www.youtube.com/embed/d9VSYecC5YM',
     youtubeCaption: "A product walkthrough I recorded for a launch. I loved being the face of Lumen5's product.",
@@ -36,8 +36,8 @@ export const sections = [
     accentWord: 'launches landed',
     stats: [
       { value: '40%', numericValue: 40, suffix: '%', accent: true, label: 'lift in paid purchases after repositioning Lumen5 around AI voiceover videos powered by ElevenLabs' },
-      { value: '3–4x', numericValue: 3, suffix: '–4x', label: 'product launches per quarter, each one with release notes, walkthrough videos, sales training, and external comms' },
-      { value: '20–40%', numericValue: 20, suffix: '–40%', label: 'YoY enterprise revenue growth since I led the pivot from self-serve freemium to Enterprise' },
+      { value: '3-4x', numericValue: 3, suffix: '-4x', label: 'product launches per quarter, each one with release notes, walkthrough videos, sales training, and external comms' },
+      { value: '20-40%', numericValue: 20, suffix: '-40%', label: 'YoY enterprise revenue growth since I led the pivot from self-serve freemium to Enterprise' },
     ],
     bg: 'bg-gray-50',
   },
@@ -46,7 +46,7 @@ export const sections = [
     tag: 'Enterprise Repositioning',
     headline: "I led a pivot that meant repositioning everything",
     accentWord: 'repositioning everything',
-    body: "When the self-serve market got crowded, I led Lumen5's transition from freemium to Enterprise. Completely different buyer, completely different pitch. We went from marketing to individual creators to selling to brand teams at KPMG, PwC, and Siemens. I rebuilt the positioning, wrote new sales enablement materials, and ran training so the team could actually sell it. The Enterprise business has grown 20-40% YoY in the five years since.",
+    body: "When the self-serve market got crowded, I led Lumen5's move from freemium to Enterprise. Completely different buyer, completely different pitch. We went from marketing to individual creators to selling to brand teams at KPMG, PwC, and Siemens. I rebuilt the positioning, wrote the new sales enablement materials, and ran the training so the team could actually sell it. The Enterprise business has grown 20-40% YoY in the five years since.",
     image: {
       src: enterpriseCheque,
       alt: 'A framed $1,000 check, our first enterprise payment',
@@ -61,13 +61,13 @@ export const sections = [
     tag: 'Shipping AI',
     headline: "I've been shipping AI products since 2018",
     accentWord: 'AI products',
-    body: "Over 7 years at Lumen5 I shipped AI-powered features from concept to launch. I introduced an LLM-powered script builder that hit 1.7x its adoption target. I led the transition to AI voiceover videos (powered by ElevenLabs) that boosted paid purchases by 40%. I've sat in the discovery calls, argued the technical trade-offs, and watched the launch metrics. That's why I can write product copy that actually holds up.",
+    body: "I've been shipping AI products at Lumen5 since 2018. I introduced an LLM-powered script builder that hit 1.7x its adoption target, then led the move from our old \"text-on-media\" videos to AI voiceovers powered by ElevenLabs. I owned the transcript-based editor, the Script Composer flow, and the pricing and paywalls that converted free users. I've sat in the discovery calls, argued the technical trade-offs, and watched the launch metrics. That's why I can write product copy that actually holds up.",
     techLogos: true,
     bg: 'bg-white',
   },
 ]
 
-// Final CTA — rendered after the FAQ, just above the footer (matches the full-page design).
+// Final CTA, rendered after the FAQ, just above the footer (matches the full-page design).
 export const contactSection = {
   id: 'contact',
   headline: "Let's talk",
