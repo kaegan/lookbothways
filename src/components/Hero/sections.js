@@ -4,9 +4,9 @@ export const sections = [
   {
     id: 'why-miovision',
     tag: 'Career Path',
-    headline: 'I started in customer success and never lost the instinct',
-    accentWord: 'customer success',
-    body: "I studied Human Geography at UBC with the goal of becoming a planner. Life took a surprise turn to tech instead. I started out in marketing and customer success, then spent 7+ years at Lumen5. I joined as a generalist and left as Head of Product, but I never stopped doing product marketing along the way. I wrote launch copy, trained sales, built landing pages. If a feature shipped, I was probably the one figuring out how to talk about it.",
+    headline: 'Whatever my title said, I was always doing marketing',
+    accentWord: 'always doing marketing',
+    body: "I studied Human Geography at UBC planning to become a city planner. Tech took a surprise turn instead. I started out in marketing and customer success, then spent 7+ years at Lumen5, where I joined as a generalist and left as Head of Product. The titles changed, but I never stopped doing product marketing. I wrote the launch copy, trained sales, built the landing pages. If a feature shipped, I was probably the one figuring out how to talk about it.",
     timeline: [
       { label: 'Apple', sub: 'Genius / training' },
       { label: 'Hootsuite', sub: 'Support + Ops' },
@@ -71,7 +71,7 @@ export const sections = [
 export const contactSection = {
   id: 'contact',
   headline: "Let's talk",
-  body: "I'm looking for a place where I can combine my product and marketing experience around a mission I care about. Miovision sits right at the intersection of cities, mobility, and AI. That's exactly where I do my best work. I'd love to be the person telling that story.",
+  body: "After years building AI products, I want to shift my work toward the positioning and narrative behind them. Miovision sits right at the intersection of cities, mobility, and AI, and it's at the point where the story you tell shapes how fast cities actually adopt it. That's exactly the work I want to own. I'd love to be the one telling it.",
   links: [
     { label: 'Email me', url: 'mailto:hello@lookbothways.fyi', primary: true },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/kaegandonnelly' },
