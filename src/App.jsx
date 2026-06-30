@@ -35,7 +35,7 @@ function App() {
               Vancouver's <span className="text-transit">most dangerous</span> intersections, scored from real crash data
             </h1>
             <p className="text-lg sm:text-xl text-graphite leading-relaxed max-w-xl">
-              Look Both Ways ranks every signalized intersection on five years of ICBC crashes, then shows where the risk clusters.
+              Look Both Ways shows the highest-risk intersections based on five years of ICBC crash data.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ function App() {
       <section id="map" className="max-w-6xl mx-auto px-6 sm:px-8 pt-14 sm:pt-16">
         <div className="flex items-center gap-3 flex-wrap mb-4">
           <span className="bg-ink text-white text-[11px] font-bold tracking-[0.12em] px-3 py-1.5 rounded-[3px]">THE MAP</span>
-          <span className="text-sm text-graphite">Every signal scored by crash risk. Bigger, redder = worse.</span>
+          <span className="text-sm text-graphite">Every signal shown by crash risk. The bigger and more red, the higher the crash volume.</span>
         </div>
         <div className="border-2 border-ink rounded-[4px] overflow-hidden">
           <MapSection />
@@ -92,7 +92,7 @@ function App() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="cs-mono text-[11px] tracking-[0.18em] uppercase text-faint mb-3">A little about Kaegan</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-ink tracking-tight font-heading">
-            The kind of person who shows up to <span className="text-transit">city hall</span>
+            The kind of person who goes to <span className="text-transit">city hall</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-graphite max-w-xl mx-auto">
             Hi Miovision! 👋 I'm Kaegan.
@@ -100,7 +100,7 @@ function App() {
           <p className="mt-4 text-base sm:text-lg text-graphite max-w-xl mx-auto">
             At 10 years old, I put on my best (only) suit and asked my mom to drive me to city hall so I could speak at a community hearing about the proposed Evergreen Line. It took two more decades, but the line was eventually built.
           </p>          <p className="mt-4 text-base sm:text-lg text-graphite max-w-xl mx-auto">
-            These days I'm a daily transit rider, and reliability is what decides whether I take the bus or drive. When TransLink floated a plan to speed up the #19 that runs past my house by spacing out the stops, I read every detail and wrote in with my thoughts.
+            These days I'm a daily transit rider and frequent cyclist. I'm also an enthusiastic urbanist. If not for a detour into technology towards the end of my Human Geography degree, I'd likely be a transportation planner right now.
           </p>
         </div>
       </div>

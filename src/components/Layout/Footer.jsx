@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col items-center sm:items-end gap-2 text-sm text-graphite">
             <div className="flex gap-4">
-              <a href="mailto:hello@lookbothways.fyi" className="text-graphite hover:text-transit transition-colors">Email</a>
+              <a href="mailto:kaegandonnelly@gmail.com" className="text-graphite hover:text-transit transition-colors">Email</a>
               <a href="https://www.linkedin.com/in/kaegandonnelly" target="_blank" rel="noopener noreferrer" className="text-graphite hover:text-transit transition-colors">LinkedIn</a>
             </div>
             <p>

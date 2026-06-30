@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { IconMapFillDuo18 as Map } from 'nucleo-ui-fill-duo-18'
 import { IconCursorRippleFillDuo18 as MousePointerClick } from 'nucleo-ui-fill-duo-18'
-import { IconLayersFillDuo18 as Layers } from 'nucleo-ui-fill-duo-18'
 import StationTag from '../Hero/StationTag'
 
 // Screenshots live in /public/screenshots and are referenced by URL so a
@@ -9,32 +8,23 @@ import StationTag from '../Hero/StationTag'
 // breaking the build.
 const rankedOverviewImg = '/screenshots/risk-scored.png'
 const reportCardImg = '/screenshots/report-card.png'
-const injuryFilterImg = '/screenshots/highlight-injury.png'
 
 const features = [
   {
     icon: Map,
     tag: 'Ranked Overview',
-    headline: 'The whole city, triaged worst-first',
-    body: "Vancouver's signals arrive pre-ranked. Numbered badges flag the top 25 hotspots (1 is the city's worst), turning 966 intersections into an ordered, defensible list of where to start.",
+    headline: 'The city’s worst intersections triaged',
+    body: "Vancouver’s worst intersections are ranked. The numbered badges flag the top 25 hotspots. #1 is the city’s worst.",
     screenshot: rankedOverviewImg,
     alt: 'Vancouver map with the 25 highest-risk intersections marked by numbered badges',
   },
   {
     icon: MousePointerClick,
     tag: 'Evidence Card',
-    headline: 'The crash record behind one signal',
-    body: 'Click any intersection for its dossier: letter grade, percentile, total crashes, injury versus property-only counts, injury rate, a five-year trend, and how it ranks against the city average.',
+    headline: 'See the crash record for every signal',
+    body: 'Click any intersection for a breakdown of its letter grade, percentile, total crashes, injury versus property-only counts, injury rate, a five-year trend, and how it ranks against the city average.',
     screenshot: reportCardImg,
     alt: 'Report card showing a risk grade, crash counts, injury rate, and a crashes-by-year chart',
-  },
-  {
-    icon: Layers,
-    tag: 'Targeted Filters',
-    headline: "Narrow to the risk you're funding",
-    body: 'Check High injury rate (≥33%) and the map rings every qualifying signal while the rest fade back. Or isolate pedestrian-actuated signals to focus on vulnerable-road-user exposure.',
-    screenshot: injuryFilterImg,
-    alt: 'Map filtered to intersections with a high injury rate, each ringed with a highlight',
   },
 ]
 
