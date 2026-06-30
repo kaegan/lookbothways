@@ -22,7 +22,7 @@ const OUT = path.join(process.cwd(), 'public', 'data', 'raw', 'intersections.geo
 
 async function main() {
   console.log('Fetching Vancouver traffic signals from Open Data portal...')
-  const res = await fetch(EXPORT_URL, { headers: { 'User-Agent': 'mindthegap/1.0' } })
+  const res = await fetch(EXPORT_URL, { headers: { 'User-Agent': 'lookbothways/1.0' } })
   if (!res.ok) throw new Error(`HTTP ${res.status} fetching traffic-signals`)
   const geojson = await res.json()
 
