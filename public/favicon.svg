@@ -1,15 +1,8 @@
-<svg width="95" height="95" viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_143_66)">
-<rect width="95" height="95" fill="white"/>
-<path d="M39 40.0489L48 42L60 17.026L50.9013 17L39 40.0489Z" fill="#8B5CF6"/>
-<path d="M48 60.963L31 67.7037L34 76L54 67.7037C55.2464 67.2142 55.7542 65.9437 56 64.5926L58 48H49L48 60.963Z" fill="#EC4899"/>
-<path d="M12 80H58.0664V88.0375H12V80Z" fill="#F59E0B"/>
-<ellipse cx="64" cy="9.5" rx="5" ry="5.5" fill="#00A3E0"/>
-<path d="M78 40L73.8912 49.3554L71.916 45.052C71.762 44.722 71.597 44.337 71.421 43.897C71.245 43.457 71.091 43.017 70.959 42.577C70.981 42.929 70.992 43.347 70.992 43.831C71.014 44.315 71.025 44.744 71.025 45.118V70H62.478V23.8H71.025L78 40Z" fill="#10B981"/>
-</g>
-<defs>
-<clipPath id="clip0_143_66">
-<rect width="95" height="95" fill="white"/>
-</clipPath>
-</defs>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="8" fill="#16171b"/>
+  <g stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="14" y1="32" x2="50" y2="32"/>
+    <polyline points="23,20 14,32 23,44"/>
+    <polyline points="41,20 50,32 41,44"/>
+  </g>
 </svg>
