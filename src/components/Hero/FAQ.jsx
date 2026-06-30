@@ -17,11 +17,11 @@ const faqs = [
   },
   {
     q: 'Is the data definitive?',
-    a: "Nope, it's directional. ICBC only captures reported crashes, so near-misses are invisible, and 2020 reflects way less traffic during COVID. Snapping each crash to the nearest signal is a heuristic, not a forensic reconstruction. Think of it as a starting point for a conversation, not a final engineering call.",
+    a: "Nope, it's directional. ICBC only captures reported crashes, so near-misses are invisible. Snapping each crash to the nearest signal is a heuristic, not a forensic reconstruction. Think of it as a starting point for a conversation, not a final engineering call.",
   },
   {
     q: 'How does this connect to the Product Marketing role?',
-    a: (<>This whole thing is product marketing in miniature. I took a messy public dataset, found the angle, and built something interactive that makes the point in a glance. That's the job: take something complex and get people to care. I also built it fast, which comes down to AI fluency. I like <a href="https://x.com/wadefoster/status/2038979630590509553" target="_blank" rel="noopener noreferrer" className="text-transit underline hover:text-ink transition-colors">this AI fluency rubric from Zapier</a>, and I'd put myself in the "adoptive" tier and climbing. Thanks for scrolling this far!</>),
+    a: "This is a small sample for product marketing for Miovision. I took a relevant public dataset, found an interesting angle, and built a quick prototype of something to market. I also built it fast, thanks to my experience working with AI tooling since 2018.",
   },
 ]
 

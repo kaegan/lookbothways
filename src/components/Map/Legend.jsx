@@ -20,8 +20,8 @@ export default function Legend({ showHotspots, showRisk }) {
             <span className="text-xs text-gray-500">High</span>
           </div>
           <p className="text-xs text-gray-500 mt-2 max-w-[180px]">
-            5 years of ICBC crashes per signal, weighted by injury severity. Bigger
-            dot = more crashes.
+            5 years of ICBC crashes per signal, weighted by injury severity. A
+            bigger dot means more crashes.
           </p>
         </>
       )}
